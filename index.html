@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#10131a" />
+<title>厦门 / 福州｜两天一晚团建目的地方案</title>
+<style>
+:root{
+  --bg:#eef2f7;
+  --ink:#10131a;
+  --sub:#626b7a;
+  --line:rgba(20,28,40,.10);
+  --glass:rgba(255,255,255,.72);
+  --glass-strong:rgba(255,255,255,.9);
+  --xm:#1f8ba9;
+  --xm2:#45c7bd;
+  --fz:#8f6346;
+  --fz2:#d6a65f;
+  --shadow:0 24px 70px rgba(28,39,54,.14);
+  --shadow2:0 10px 30px rgba(28,39,54,.10);
+  --r:30px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  margin:0;color:var(--ink);background:
+  radial-gradient(circle at 8% 0%,rgba(115,205,226,.24),transparent 28%),
+  radial-gradient(circle at 92% 12%,rgba(239,192,118,.18),transparent 27%),
+  linear-gradient(180deg,#f8fbff 0%,#eef2f7 48%,#f6f3ef 100%);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.55;
+}
+a{color:inherit}
+button{font:inherit}
+img{display:block;width:100%}
+.shell{width:min(1240px,94vw);margin:auto}
+
+/* top chrome */
+.topbar{position:sticky;top:0;z-index:50;padding:12px 0 0;pointer-events:none}
+.topbar-inner{
+  width:min(760px,92vw);margin:auto;padding:7px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
+  background:rgba(246,249,252,.72);border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 10px 38px rgba(25,39,55,.12);
+  backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);
+  border-radius:999px;pointer-events:auto;
+}
+.topbar button{border:0;background:transparent;color:#697384;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:750;transition:.25s}
+.topbar button.active{background:#151922;color:#fff;box-shadow:0 6px 18px rgba(19,25,34,.18)}
+
+/* hero */
+.hero{padding:64px 0 30px}
+.hero-meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:18px}
+.dot{width:8px;height:8px;border-radius:99px;background:#28a7bb;box-shadow:0 0 0 6px rgba(40,167,187,.12)}
+.hero-meta span{font-size:13px;font-weight:800;color:#5f6877;letter-spacing:.02em}
+h1{font-size:clamp(42px,6.2vw,78px);line-height:1.02;letter-spacing:-.055em;margin:0;max-width:1000px}
+.hero-sub{font-size:18px;color:var(--sub);max-width:800px;margin:22px 0 0}
+
+/* overview */
+.overview{margin:28px 0 68px}
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.city-cover{position:relative;min-height:520px;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);isolation:isolate;cursor:pointer}
+.city-cover img{position:absolute;inset:0;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.city-cover:hover img{transform:scale(1.035)}
+.city-cover:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(5,14,23,.03) 30%,rgba(8,15,25,.82) 100%)}
+.city-cover:after{content:"";position:absolute;inset:0;z-index:1;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);border-radius:inherit;pointer-events:none}
+.cover-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:28px;color:#fff}
+.cover-kicker{font-size:12px;font-weight:850;letter-spacing:.15em;text-transform:uppercase;opacity:.78}
+.cover-copy h2{font-size:44px;letter-spacing:-.04em;margin:4px 0 8px}
+.cover-copy p{font-size:16px;margin:0 0 18px;max-width:470px;color:rgba(255,255,255,.88)}
+.cover-tags{display:flex;flex-wrap:wrap;gap:8px}
+.cover-tag{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);font-size:12px;font-weight:750}
+
+.section-head{margin:0 0 24px}
+.section-kicker{font-size:12px;letter-spacing:.14em;font-weight:850;color:#808999;text-transform:uppercase}
+.section-head h2{font-size:clamp(32px,4.5vw,54px);letter-spacing:-.045em;line-height:1.06;margin:7px 0 10px}
+.section-head p{margin:0;color:var(--sub);font-size:17px;max-width:840px}
+
+/* city wrapper */
+.city-section{scroll-margin-top:92px;margin-bottom:92px}
+.city-stage{border-radius:34px;padding:28px;background:rgba(255,255,255,.50);border:1px solid rgba(255,255,255,.84);box-shadow:var(--shadow);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.city-stage.xm{background:linear-gradient(145deg,rgba(230,249,252,.78),rgba(255,255,255,.64) 46%,rgba(235,246,248,.72))}
+.city-stage.fz{background:linear-gradient(145deg,rgba(253,244,229,.82),rgba(255,255,255,.65) 45%,rgba(244,236,229,.80))}
+.city-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-bottom:18px}
+.feature-image{position:relative;min-height:390px;border-radius:28px;overflow:hidden;background:#dfe5eb;cursor:zoom-in}
+.feature-image img{height:100%;object-fit:cover;transition:.55s ease}
+.feature-image:hover img{transform:scale(1.025)}
+.feature-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(8,15,26,.72));pointer-events:none}
+.feature-caption{position:absolute;left:24px;right:24px;bottom:20px;color:#fff;z-index:2}
+.feature-caption b{display:block;font-size:24px;letter-spacing:-.02em}.feature-caption span{font-size:13px;opacity:.84}
+.city-summary{display:flex;flex-direction:column;justify-content:space-between;padding:28px;border-radius:28px;background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.88)}
+.city-summary h3{font-size:28px;letter-spacing:-.035em;margin:0 0 12px}.city-summary p{color:var(--sub);margin:0}
+.strengths{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.strength{padding:15px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.strength b{display:block;font-size:14px;margin-bottom:4px}.strength span{font-size:12px;color:var(--sub)}
+
+/* day switch */
+.day-switch{display:inline-grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;border-radius:999px;background:rgba(20,27,38,.07);margin:20px 0 18px}
+.day-switch button{border:0;background:transparent;border-radius:999px;padding:10px 18px;color:#697281;font-weight:800;cursor:pointer;transition:.22s}
+.day-switch button.active{background:#fff;color:#151922;box-shadow:0 6px 18px rgba(26,35,47,.10)}
+.day-panel{display:none}.day-panel.active{display:block;animation:fadeUp .32s ease}
+@keyframes fadeUp{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* itinerary */
+.itin-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}
+.schedule{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.9);border-radius:28px;padding:22px}
+.schedule-title{display:flex;justify-content:space-between;gap:14px;align-items:flex-end;margin-bottom:10px}
+.schedule-title h3{margin:0;font-size:25px;letter-spacing:-.03em}.schedule-title span{font-size:12px;color:var(--sub)}
+.slot{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:17px 2px;border-top:1px solid var(--line)}
+.slot:first-of-type{border-top:0}.slot time{font-size:14px;font-weight:850;color:#273141}.slot h4{font-size:16px;margin:0 0 4px}.slot p{margin:0;color:var(--sub);font-size:13px}
+
+.activity-card{position:relative;border-radius:28px;overflow:hidden;min-height:100%;background:#10141c;color:#fff;box-shadow:var(--shadow2)}
+.activity-card>img{position:absolute;inset:0;height:100%;object-fit:cover;opacity:.72}
+.activity-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,19,.08),rgba(8,12,19,.88) 78%)}
+.activity-copy{position:absolute;z-index:2;left:22px;right:22px;bottom:22px}
+.activity-label{display:inline-flex;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);font-size:11px;font-weight:850;letter-spacing:.08em}
+.activity-copy h3{font-size:28px;line-height:1.05;margin:10px 0 8px;letter-spacing:-.035em}.activity-copy p{margin:0;color:rgba(255,255,255,.83);font-size:13px}
+.task-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.task-chip{font-size:11px;font-weight:750;padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16)}
+
+/* galleries */
+.subsection{margin-top:28px}
+.subsection-title{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;margin-bottom:14px}.subsection-title h3{margin:0;font-size:24px;letter-spacing:-.03em}.subsection-title p{margin:0;color:var(--sub);font-size:13px;max-width:520px;text-align:right}
+.photo-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:220px;gap:12px}
+.photo{position:relative;border-radius:24px;overflow:hidden;cursor:zoom-in;background:#dfe5eb}
+.photo:first-child{grid-row:span 2}.photo img{height:100%;object-fit:cover;transition:.45s ease}.photo:hover img{transform:scale(1.035)}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,12,20,.72))}
+.photo span{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;color:#fff;font-size:13px;font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+
+.food-row{display:flex;gap:12px;overflow:auto;padding:2px 2px 12px;scroll-snap-type:x mandatory;scrollbar-width:none}.food-row::-webkit-scrollbar{display:none}
+.food-card{flex:0 0 min(310px,79vw);scroll-snap-align:start;border-radius:24px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(26,36,49,.07)}
+.food-card img{height:175px;object-fit:cover}.food-copy{padding:16px 17px 18px}.food-copy b{display:block;font-size:17px;margin-bottom:5px}.food-copy span{display:block;color:var(--sub);font-size:13px}
+.food-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.food-tags i{font-style:normal;font-size:11px;padding:7px 9px;border-radius:999px;background:#f3f5f8;color:#5f6979}
+
+/* final compare */
+.compare-section{scroll-margin-top:92px;margin-bottom:72px}
+.compare-card{padding:30px;border-radius:34px;background:rgba(255,255,255,.68);border:1px solid rgba(255,255,255,.9);box-shadow:var(--shadow);backdrop-filter:blur(20px)}
+.compare-grid{display:grid;grid-template-columns:180px 1fr 1fr;gap:0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff}
+.c-cell{padding:17px 18px;border-bottom:1px solid var(--line)}
+.c-cell:nth-last-child(-n+3){border-bottom:0}.c-head{font-size:13px;font-weight:850;background:#f4f6f9}.c-city{font-size:18px;font-weight:850}.c-label{font-weight:800;font-size:13px;color:#586171;background:#fafbfc}.c-text{font-size:13px;color:#505a69}.xmcol{background:linear-gradient(180deg,rgba(222,248,250,.7),#fff)}.fzcol{background:linear-gradient(180deg,rgba(251,238,218,.7),#fff)}
+.metric{display:flex;align-items:center;gap:9px}.dots{display:flex;gap:4px}.dots i{width:8px;height:8px;border-radius:50%;background:#dce1e8}.dots i.on.xm-dot{background:var(--xm)}.dots i.on.fz-dot{background:var(--fz)}
+.selection-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.selection-card{padding:22px;border-radius:24px;color:#fff;overflow:hidden;position:relative;min-height:170px}.selection-card:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.1),rgba(0,0,0,.38))}.selection-card.xm{background:linear-gradient(135deg,#2ba9c2,#207aa0)}.selection-card.fz{background:linear-gradient(135deg,#c0955f,#8e6047)}.selection-card>*{position:relative;z-index:2}.selection-card small{font-weight:800;letter-spacing:.12em;opacity:.78}.selection-card h3{font-size:25px;margin:7px 0 8px;letter-spacing:-.03em}.selection-card p{margin:0;max-width:440px;color:rgba(255,255,255,.87);font-size:13px}
+
+.footer{padding:10px 0 48px;color:#7b8491;font-size:11px}.footer a{text-decoration:none;border-bottom:1px solid rgba(80,90,105,.25)}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(7,10,16,.84);z-index:100;padding:24px;backdrop-filter:blur(20px);cursor:zoom-out}
+.lightbox.open{display:flex}.lightbox img{max-width:min(1120px,94vw);max-height:84vh;object-fit:contain;border-radius:24px;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.lightbox-caption{position:absolute;left:50%;transform:translateX(-50%);bottom:20px;color:rgba(255,255,255,.8);font-size:12px;background:rgba(0,0,0,.28);padding:8px 12px;border-radius:999px;white-space:nowrap}
+
+@media(max-width:900px){
+  .overview-grid,.city-intro,.itin-grid,.selection-cards{grid-template-columns:1fr}
+  .city-cover{min-height:430px}.city-intro .feature-image{min-height:320px}
+  .photo-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.photo:first-child{grid-column:span 2;grid-row:span 1}
+  .compare-grid{grid-template-columns:120px 1fr 1fr;overflow:auto}.c-cell{padding:14px 12px}
+}
+@media(max-width:620px){
+  .shell{width:min(94vw,1240px)}.hero{padding-top:48px}.hero-sub{font-size:16px}
+  .overview{margin-bottom:58px}.city-cover{min-height:390px;border-radius:28px}.cover-copy{left:20px;right:20px;bottom:20px}.cover-copy h2{font-size:36px}
+  .city-stage{padding:14px;border-radius:28px}.city-summary{padding:20px}.strengths{grid-template-columns:1fr 1fr}
+  .slot{grid-template-columns:78px 1fr;gap:11px}.activity-card{min-height:390px}
+  .photo-grid{grid-template-columns:1fr;grid-auto-rows:220px}.photo:first-child{grid-column:auto}.subsection-title{display:block}.subsection-title p{text-align:left;margin-top:5px}
+  .topbar-inner{width:94vw}.topbar button{padding:9px 7px;font-size:12px}
+  .compare-card{padding:16px}.compare-grid{grid-template-columns:100px 210px 210px}
+}
+@media print{.topbar,.lightbox{display:none!important}body{background:#fff}.city-stage,.compare-card{box-shadow:none}.city-section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <button class="active" data-jump="overview">目的地总览</button>
+    <button data-jump="xiamen">厦门</button>
+    <button data-jump="fuzhou">福州</button>
+  </div>
+</div>
+
+<main class="shell">
+  <header class="hero" id="overview">
+    <div class="hero-meta"><i class="dot"></i><span>17人 · 11月13日出发 · 两天一晚 · 住宿与交通另行安排</span></div>
+    <h1>厦门 or 福州<br>两种完全不同的团建体验</h1>
+    <p class="hero-sub">同样是两天一晚：厦门把重点放在海边、城市探索和岛屿漫游；福州把老城、山林和本地文化串在一起。下面只呈现两地各自的特色、玩法和吃逛内容，方便直接比较。</p>
+  </header>
+
+  <section class="overview">
+    <div class="overview-grid">
+      <article class="city-cover" data-scrollto="xiamen">
+        <img src="https://www.chinadiscovery.com/assets/images/xiamen/activities/xiamen-shapowei.jpg" alt="厦门沙坡尾" />
+        <div class="cover-copy">
+          <div class="cover-kicker">Xiamen</div>
+          <h2>厦门</h2>
+          <p>海边、沙坡尾、鼓浪屿。整体更松弛，照片和视频素材丰富，团建更像一次一起出发的城市旅行。</p>
+          <div class="cover-tags"><span class="cover-tag">海边城市</span><span class="cover-tag">年轻感</span><span class="cover-tag">出片</span><span class="cover-tag">自由度高</span></div>
+        </div>
+      </article>
+      <article class="city-cover" data-scrollto="fuzhou">
+        <img src="https://n.sinaimg.cn/sinacn/w1065h713/20180201/fc07-fyrcsrw6934578.png" alt="福州三坊七巷" />
+        <div class="cover-copy">
+          <div class="cover-kicker">Fuzhou</div>
+          <h2>福州</h2>
+          <p>三坊七巷、烟台山、鼓山。第一天城市文化，第二天切到山里，内容层次更丰富。</p>
+          <div class="cover-tags"><span class="cover-tag">古城人文</span><span class="cover-tag">山林</span><span class="cover-tag">本地味道</span><span class="cover-tag">内容丰富</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- XIAMEN -->
+  <section class="city-section" id="xiamen">
+    <div class="section-head">
+      <div class="section-kicker">Destination 01 · Xiamen</div>
+      <h2>厦门｜海边城市探索 + 鼓浪屿</h2>
+      <p>第一天下午把团建内容做足，第二天把节奏放松。核心画面是海边、渔港、老街和岛上的小巷。</p>
+    </div>
+
+    <div class="city-stage xm">
+      <div class="city-intro">
+        <div class="feature-image" data-lightbox data-caption="沙坡尾：老渔港、艺术西区与年轻街区交织在一起">
+          <img src="https://www.chinadiscovery.com/assets/images/xiamen/activities/xiamen-shapowei.jpg" alt="沙坡尾" />
+          <div class="feature-overlay"></div><div class="feature-caption"><b>沙坡尾</b><span>老渔港 × 艺术西区 × 海边街区</span></div>
+        </div>
+        <div class="city-summary">
+          <div><h3>这两天会是什么感觉？</h3><p>第一天下午在沙坡尾做城市挑战，大家真正“玩到一起”；晚上吃闽南菜后自由活动。第二天统一坐8:50客船上鼓浪屿，上午轻量寻迹，午餐和大合照后自由安排。</p></div>
+          <div class="strengths">
+            <div class="strength"><b>旅行感</b><span>海边 + 上岛，场景转换明显</span></div>
+            <div class="strength"><b>互动方式</b><span>拍照、短视频、城市任务</span></div>
+            <div class="strength"><b>自由度</b><span>晚间和第二天下午都可自由安排</span></div>
+            <div class="strength"><b>画面感</b><span>海、双子塔、老建筑、小巷</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-switch" data-city="xm">
+        <button class="active" data-day="1">Day 1 · 13:00开始</button>
+        <button data-day="2">Day 2 · 鼓浪屿</button>
+      </div>
+
+      <div class="day-panel active" data-panel="xm-1">
+        <div class="itin-grid">
+          <div class="schedule">
+            <div class="schedule-title"><h3>11月13日｜周五</h3><span>午餐各自解决</span></div>
+            <div class="slot"><time>13:00</time><div><h4>酒店集合 · 分组 · 发任务卡</h4><p>17人分4组（4+4+4+5），30分钟完成开场和规则说明。</p></div></div>
+            <div class="slot"><time>13:30–17:30</time><div><h4>沙坡尾城市挑战</h4><p>活动范围锁定沙坡尾、艺术西区、演武大桥一带，不按速度排名，重点看创意和参与。</p></div></div>
+            <div class="slot"><time>17:30–18:00</time><div><h4>海边集合 · 团队合照</h4><p>全员照 + 小队照，顺手把下午素材收齐。</p></div></div>
+            <div class="slot"><time>18:30–20:30</time><div><h4>闽南菜团建晚餐</h4><p>边吃边看四队作品，穿插趣味奖项，不做正式汇报。</p></div></div>
+            <div class="slot"><time>20:30后</time><div><h4>自由活动</h4><p>中山路、酒吧、咖啡，或者直接回酒店休息。</p></div></div>
+          </div>
+          <div class="activity-card">
+            <img src="https://5b0988e595225.cdn.sohucs.com/images/20191017/37093bac0e594395a6afc311a6eb942c.jpeg" alt="演武大桥" />
+            <div class="activity-copy">
+              <span class="activity-label">核心团建内容</span>
+              <h3>沙坡尾城市挑战</h3>
+              <p>把任务藏进街区里，不做传统拓展。大家边走、边拍、边吃，最后把素材带到晚餐现场。</p>
+              <div class="task-list"><span class="task-chip">厦门封面照</span><span class="task-chip">30秒短片</span><span class="task-chip">本地小吃</span><span class="task-chip">隐藏任务</span><span class="task-chip">海边合照</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-panel" data-panel="xm-2">
+        <div class="itin-grid">
+          <div class="schedule">
+            <div class="schedule-title"><h3>11月14日｜周六</h3><span>8:50客船</span></div>
+            <div class="slot"><time>07:30</time><div><h4>酒店集合出发</h4><p>统一前往码头，给17人的安检和候船留出余量。</p></div></div>
+            <div class="slot"><time>08:50</time><div><h4>乘船前往鼓浪屿</h4><p>统一登岛，第二天切换到更轻松的旅行模式。</p></div></div>
+            <div class="slot"><time>09:15–11:45</time><div><h4>鼓浪屿轻量寻迹</h4><p>每队只做三件事：一张照片、一段声音、一个发现。其余时间逛小巷、老建筑和海边。</p></div></div>
+            <div class="slot"><time>12:00–13:15</time><div><h4>团队午餐</h4><p>最后一顿集体餐，轻松收尾。</p></div></div>
+            <div class="slot"><time>13:20</time><div><h4>大合照 · 活动结束</h4><p>之后自由活动，或者按个人航班返回上海。</p></div></div>
+          </div>
+          <div class="activity-card">
+            <img src="https://english.shanghai.gov.cn/cmsres/7a/7a71bd62c25647fabd203f1edb3c1843/853d068a23063e28e2c31ad0c43e630d.jpg" alt="鼓浪屿" />
+            <div class="activity-copy">
+              <span class="activity-label">第二天 · 轻量模式</span>
+              <h3>鼓浪屿轻量寻迹</h3>
+              <p>万国建筑、小巷、海风和岛上的生活感本身就是内容，不把第二天再做成一场比赛。</p>
+              <div class="task-list"><span class="task-chip">一张照片</span><span class="task-chip">一段声音</span><span class="task-chip">一个发现</span><span class="task-chip">午餐合照</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title"><h3>在厦门，会看到什么</h3><p>核心不是“打卡多少景点”，而是海边、旧渔港、骑楼与岛屿的连续变化。</p></div>
+        <div class="photo-grid">
+          <div class="photo" data-lightbox data-caption="沙坡尾：百年渔港与年轻街区共存"><img src="https://www.chinadiscovery.com/assets/images/xiamen/activities/xiamen-shapowei.jpg" alt="沙坡尾"><span>沙坡尾 · 城市挑战主场</span></div>
+          <div class="photo" data-lightbox data-caption="鼓浪屿：海岛、红砖建筑与老别墅"><img src="https://english.shanghai.gov.cn/cmsres/7a/7a71bd62c25647fabd203f1edb3c1843/853d068a23063e28e2c31ad0c43e630d.jpg" alt="鼓浪屿"><span>鼓浪屿 · 海岛建筑</span></div>
+          <div class="photo" data-lightbox data-caption="鼓浪屿：安静的小巷更适合慢慢走"><img src="https://www.ourchinastory.com/images/content/travel-leisure/2021/11/%E7%95%B6%E4%BB%A3%E4%B8%AD%E5%9C%8B-%E6%BD%AE%E9%81%8A%E7%94%9F%E6%B4%BB-%E6%97%85%E9%81%8A%E9%A2%A8%E7%89%A9-%E9%BC%93%E6%B5%AA%E5%B6%BC%EF%BC%90%EF%BC%97_x1.jpg" alt="鼓浪屿小巷"><span>鼓浪屿 · 小巷漫游</span></div>
+          <div class="photo" data-lightbox data-caption="演武大桥：海边步道与双子塔视角"><img src="https://5b0988e595225.cdn.sohucs.com/images/20191017/37093bac0e594395a6afc311a6eb942c.jpeg" alt="演武大桥"><span>演武大桥 · 海边合照</span></div>
+          <div class="photo" data-lightbox data-caption="中山路：骑楼与夜间街区"><img src="https://digital.ihg.com/is/image/ihg/hotel-indigo-xiamen-3906930265-4x3" alt="中山路"><span>中山路 · 晚上自由活动</span></div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title"><h3>厦门吃什么</h3><p>晚餐可以走闽南菜 / 海鲜；白天任务里再穿插一两样街头小吃。</p></div>
+        <div class="food-row">
+          <article class="food-card"><img src="https://img.xiangmu.com/info/202401/25/1706163220PPBWUYM.jpg" alt="沙茶面"><div class="food-copy"><b>沙茶面</b><span>厦门最有辨识度的一碗，沙茶汤底配海鲜、豆制品和配料，自由度很高。</span><div class="food-tags"><i>适合任务试吃</i><i>本地代表</i></div></div></article>
+          <article class="food-card"><img src="https://n.sinaimg.cn/sinacn16/461/w757h504/20180318/ba24-fyshfur2972974.jpg" alt="土笋冻"><div class="food-copy"><b>土笋冻</b><span>口感和原料都很有记忆点，特别适合做“有人喜欢、有人挑战”的团建话题。</span><div class="food-tags"><i>有话题</i><i>闽南特色</i></div></div></article>
+          <article class="food-card"><div class="food-copy" style="min-height:220px;display:flex;flex-direction:column;justify-content:center"><b>还可以吃</b><span>海蛎煎、姜母鸭、花生汤、五香卷、海鲜排档。正式晚餐可以围绕闽南菜做得更完整。</span><div class="food-tags"><i>海蛎煎</i><i>姜母鸭</i><i>花生汤</i><i>五香卷</i><i>海鲜</i></div></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUZHOU -->
+  <section class="city-section" id="fuzhou">
+    <div class="section-head">
+      <div class="section-kicker">Destination 02 · Fuzhou</div>
+      <h2>福州｜老城任务 + 鼓山半日</h2>
+      <p>第一天在古厝和老街里完成城市任务，晚上去烟台山；第二天换成山林、古寺和摩崖石刻，内容不重复。</p>
+    </div>
+
+    <div class="city-stage fz">
+      <div class="city-intro">
+        <div class="feature-image" data-lightbox data-caption="三坊七巷：明清古厝、名人故居与老街生活交织">
+          <img src="https://n.sinaimg.cn/sinacn/w1065h713/20180201/fc07-fyrcsrw6934578.png" alt="三坊七巷" />
+          <div class="feature-overlay"></div><div class="feature-caption"><b>三坊七巷</b><span>古厝 × 名人成长地 × 非遗与福州生活</span></div>
+        </div>
+        <div class="city-summary">
+          <div><h3>这两天会是什么感觉？</h3><p>第一天下午在三坊七巷完成城市任务，晚餐后去烟台山散步、喝咖啡；第二天上鼓山，山林、古寺和石刻把场景彻底切换。</p></div>
+          <div class="strengths">
+            <div class="strength"><b>内容层次</b><span>老城、人文、山林三个维度</span></div>
+            <div class="strength"><b>互动方式</b><span>寻找、拍摄、故事表达</span></div>
+            <div class="strength"><b>本地特色</b><span>古厝、闽都文化、福州味</span></div>
+            <div class="strength"><b>团队共同感</b><span>第二天有一起走山路的经历</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-switch" data-city="fz">
+        <button class="active" data-day="1">Day 1 · 13:30开始</button>
+        <button data-day="2">Day 2 · 鼓山</button>
+      </div>
+
+      <div class="day-panel active" data-panel="fz-1">
+        <div class="itin-grid">
+          <div class="schedule">
+            <div class="schedule-title"><h3>11月13日｜周五</h3><span>午餐各自解决</span></div>
+            <div class="slot"><time>13:30</time><div><h4>酒店集合 · 分组 · 发任务卡</h4><p>17人分4组，明确区域与集合时间后直接出发。</p></div></div>
+            <div class="slot"><time>14:00–17:30</time><div><h4>三坊七巷城市任务赛</h4><p>从古厝、名人、非遗和福州味道里找线索。不是历史知识考试，重点是边逛边发现。</p></div></div>
+            <div class="slot"><time>18:00–20:00</time><div><h4>福州菜团建晚餐</h4><p>边吃边看下午成果，做轻量颁奖。</p></div></div>
+            <div class="slot"><time>20:00后</time><div><h4>烟台山夜游</h4><p>老洋房、坡道、咖啡馆、买手店和小酒馆。到达后不再统一行动。</p></div></div>
+          </div>
+          <div class="activity-card">
+            <img src="https://image.fznews.com.cn/app/pic/2022-07/11/374272_201faaff-19a8-42da-b07e-7f93850a2f33.jpg" alt="三坊七巷夜景" />
+            <div class="activity-copy">
+              <span class="activity-label">核心团建内容</span>
+              <h3>三坊七巷城市任务赛</h3>
+              <p>在坊巷里找人、找建筑、找味道，把福州的文化做成可参与的任务。</p>
+              <div class="task-list"><span class="task-chip">寻找“福”</span><span class="task-chip">古厝发现</span><span class="task-chip">福州味道</span><span class="task-chip">小队照片</span><span class="task-chip">隐藏任务</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-panel" data-panel="fz-2">
+        <div class="itin-grid">
+          <div class="schedule">
+            <div class="schedule-title"><h3>11月14日｜周六</h3><span>鼓山半日</span></div>
+            <div class="slot"><time>08:30</time><div><h4>酒店集合 · 前往鼓山</h4><p>不安排太早起床，第一天晚上保留自由活动空间。</p></div></div>
+            <div class="slot"><time>09:15–11:45</time><div><h4>鼓山轻徒步 + 轻任务</h4><p>不要求17个人从山脚硬爬；以核心游览区为主，结合景交/缆车降低体力门槛。</p></div></div>
+            <div class="slot"><time>12:30–14:00</time><div><h4>团队午餐</h4><p>四队各用2分钟展示“过去 / 现在 / 未来”三张照片。</p></div></div>
+            <div class="slot"><time>14:00</time><div><h4>大合照 · 活动结束</h4><p>之后自由活动或按个人航班、高铁安排返回上海。</p></div></div>
+          </div>
+          <div class="activity-card">
+            <img src="https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260520/image/content/e65e9cc706bc416f8f881923b04908b9.jpg" alt="鼓山摩崖石刻" />
+            <div class="activity-copy">
+              <span class="activity-label">第二天 · 山林模式</span>
+              <h3>鼓山轻徒步 + 轻任务</h3>
+              <p>千年古道、摩崖石刻、涌泉寺和城市观景把第二天从“逛街区”切换成一次共同登高。</p>
+              <div class="task-list"><span class="task-chip">过去 / 现在 / 未来</span><span class="task-chip">找到一个“福”</span><span class="task-chip">最后一张小队照</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title"><h3>在福州，会看到什么</h3><p>第一天是坊巷、古厝和老洋房；第二天是山林、寺院、石刻和城市俯瞰。</p></div>
+        <div class="photo-grid">
+          <div class="photo" data-lightbox data-caption="三坊七巷：保存完整的坊巷格局与大量明清古建筑"><img src="https://n.sinaimg.cn/sinacn/w1065h713/20180201/fc07-fyrcsrw6934578.png" alt="三坊七巷"><span>三坊七巷 · 城市任务主场</span></div>
+          <div class="photo" data-lightbox data-caption="烟台山：老洋房和新商业混在一起，适合晚上慢慢走"><img src="https://ak-d.tripcdn.com/images/1mi0d12000jyiyz4b950D.jpg?proc=source%2Ftrip" alt="烟台山"><span>烟台山 · 晚上自由活动</span></div>
+          <div class="photo" data-lightbox data-caption="鼓山：摩崖石刻和山林古道是这里最有辨识度的画面"><img src="https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260520/image/content/e65e9cc706bc416f8f881923b04908b9.jpg" alt="鼓山摩崖石刻"><span>鼓山 · 摩崖石刻</span></div>
+          <div class="photo" data-lightbox data-caption="涌泉寺：鼓山山腰的千年古刹"><img src="https://static.xsite.com.cn/chunyong.com.cn/images/2024/12/15/aaedfe580a3d61ce306f00c8d5a6b1a5.jpg" alt="涌泉寺"><span>涌泉寺 · 山林古刹</span></div>
+          <div class="photo" data-lightbox data-caption="鼓山观景：山上可俯瞰福州城市"><img src="https://image.fznews.com.cn/app/pic/2022-07/15/375703_b309c601-3e7d-422f-8298-2033f20820b2.jpg" alt="鼓山观景"><span>鼓山 · 城市俯瞰</span></div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title"><h3>福州吃什么</h3><p>福州菜的辨识度很高：汤鲜、酸甜、海味明显，正式团餐比街头小吃更容易体现特色。</p></div>
+        <div class="food-row">
+          <article class="food-card"><img src="https://dimg04.c-ctrip.com/images/100v0w000000l2op38281_D_750_450_Q90.jpg?proc=autoorient" alt="佛跳墙"><div class="food-copy"><b>佛跳墙</b><span>福州菜里最有代表性的名菜之一，适合作为团建晚餐里的“城市记忆点”。</span><div class="food-tags"><i>福州代表</i><i>适合团餐</i></div></div></article>
+          <article class="food-card"><img src="https://axwwgrkdco.cloudimg.io/v7/__gmpics3__/9eb588bec2e944b5961d94c5bda8d710.jpeg?width=1000" alt="荔枝肉"><div class="food-copy"><b>荔枝肉</b><span>酸甜口、外脆内嫩，是很容易被大多数人接受的一道福州家常名菜。</span><div class="food-tags"><i>酸甜</i><i>接受度高</i></div></div></article>
+          <article class="food-card"><div class="food-copy" style="min-height:220px;display:flex;flex-direction:column;justify-content:center"><b>还可以吃</b><span>鱼丸、肉燕、醉排骨、红糟类菜、海蛎饼、锅边糊。第一天下午可以把鱼丸/肉燕放进任务卡。</span><div class="food-tags"><i>鱼丸</i><i>肉燕</i><i>醉排骨</i><i>海蛎饼</i><i>锅边糊</i></div></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="compare-section" id="compare">
+    <div class="section-head">
+      <div class="section-kicker">At a glance</div>
+      <h2>最后放在一起看</h2>
+      <p>不替代选择，只把两地最明显的差异摆在同一页。</p>
+    </div>
+    <div class="compare-card">
+      <div class="compare-grid">
+        <div class="c-cell c-head">维度</div><div class="c-cell c-city xmcol">厦门</div><div class="c-cell c-city fzcol">福州</div>
+        <div class="c-cell c-label">第一眼</div><div class="c-cell c-text xmcol">海边、年轻、轻松、好拍</div><div class="c-cell c-text fzcol">古城、人文、山林、层次丰富</div>
+        <div class="c-cell c-label">第一天下午</div><div class="c-cell c-text xmcol">沙坡尾城市挑战</div><div class="c-cell c-text fzcol">三坊七巷城市任务赛</div>
+        <div class="c-cell c-label">第二天</div><div class="c-cell c-text xmcol">8:50上鼓浪屿，午餐后自由</div><div class="c-cell c-text fzcol">鼓山半日，午餐后自由</div>
+        <div class="c-cell c-label">旅行感</div><div class="c-cell c-text xmcol"><div class="metric"><div class="dots"><i class="on xm-dot"></i><i class="on xm-dot"></i><i class="on xm-dot"></i><i class="on xm-dot"></i><i class="on xm-dot"></i></div><span>强</span></div></div><div class="c-cell c-text fzcol"><div class="metric"><div class="dots"><i class="on fz-dot"></i><i class="on fz-dot"></i><i class="on fz-dot"></i><i class="on fz-dot"></i><i></i></div><span>较强</span></div></div>
+        <div class="c-cell c-label">文化感</div><div class="c-cell c-text xmcol"><div class="metric"><div class="dots"><i class="on xm-dot"></i><i class="on xm-dot"></i><i class="on xm-dot"></i><i></i><i></i></div><span>适中</span></div></div><div class="c-cell c-text fzcol"><div class="metric"><div class="dots"><i class="on fz-dot"></i><i class="on fz-dot"></i><i class="on fz-dot"></i><i class="on fz-dot"></i><i class="on fz-dot"></i></div><span>强</span></div></div>
+        <div class="c-cell c-label">户外感</div><div class="c-cell c-text xmcol">海边步行 + 岛上漫游</div><div class="c-cell c-text fzcol">城市步行 + 鼓山轻徒步</div>
+        <div class="c-cell c-label">吃的记忆</div><div class="c-cell c-text xmcol">沙茶面、海蛎煎、姜母鸭、海鲜</div><div class="c-cell c-text fzcol">佛跳墙、鱼丸、肉燕、荔枝肉</div>
+      </div>
+
+      <div class="selection-cards">
+        <div class="selection-card xm"><small>XIAMEN</small><h3>更像一次“团队一起去旅行”</h3><p>海边、上岛和年轻街区把氛围拉得很松。活动的存在感不会盖过旅行本身。</p></div>
+        <div class="selection-card fz"><small>FUZHOU</small><h3>更像一次“有内容的城市团建”</h3><p>老城、夜游和鼓山三段体验差异大，团队内容和本地文化更容易串成完整故事。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    图片用于内部目的地比较展示，来自公开文旅/媒体页面：沙坡尾、鼓浪屿、三坊七巷、烟台山、鼓山及相关美食图片。正式对外发布前建议统一替换为公司自有或已获授权素材。<br>
+    参考：<a href="https://www.fj.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/hyjj/202603/t20260313_7109299.htm" target="_blank">福建省政府·沙坡尾</a> · <a href="https://www.fuzhou.gov.cn/zwgk/gzdt/rcyw/202610/t20261008_5378705.htm" target="_blank">福州市政府·烟台山</a> · <a href="https://www.fuzhou.gov.cn/zgfzhd/znhd/fzsgllydjqglwyh/jqzx/202412/t20241210_4943569.htm" target="_blank">鼓山旅游景区</a>
+  </footer>
+</main>
+
+<div class="lightbox" id="lightbox"><img alt="预览"><div class="lightbox-caption"></div></div>
+
+<script>
+// iOS-like segmented navigation
+const navBtns=[...document.querySelectorAll('[data-jump]')];
+navBtns.forEach(btn=>btn.addEventListener('click',()=>{
+  const el=document.getElementById(btn.dataset.jump);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}));
+[...document.querySelectorAll('[data-scrollto]')].forEach(card=>card.addEventListener('click',()=>{
+  document.getElementById(card.dataset.scrollto)?.scrollIntoView({behavior:'smooth',block:'start'});
+}));
+
+const observed=['overview','xiamen','fuzhou'].map(id=>document.getElementById(id));
+const io=new IntersectionObserver(entries=>{
+  const active=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+  if(!active) return;
+  navBtns.forEach(b=>b.classList.toggle('active',b.dataset.jump===active.target.id));
+},{rootMargin:'-20% 0px -60% 0px',threshold:[0,.2,.5]});
+observed.forEach(x=>io.observe(x));
+
+// day segmented controls
+[...document.querySelectorAll('.day-switch')].forEach(sw=>{
+  const city=sw.dataset.city;
+  sw.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+    sw.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll(`[data-panel^="${city}-"]`).forEach(p=>p.classList.remove('active'));
+    document.querySelector(`[data-panel="${city}-${btn.dataset.day}"]`)?.classList.add('active');
+  }));
+});
+
+// image lightbox
+const lb=document.getElementById('lightbox');
+const lbImg=lb.querySelector('img');
+const lbCap=lb.querySelector('.lightbox-caption');
+document.querySelectorAll('[data-lightbox]').forEach(el=>el.addEventListener('click',()=>{
+  const img=el.querySelector('img'); if(!img) return;
+  lbImg.src=img.src; lbCap.textContent=el.dataset.caption||img.alt||''; lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}));
+lb.addEventListener('click',()=>{lb.classList.remove('open');document.body.style.overflow=''});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){lb.classList.remove('open');document.body.style.overflow=''}});
+</script>
+</body>
+</html>
